@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
-// import { CoreModule } from 'app/core/core.module';
+import { CoreModule } from 'app/core/core.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -20,7 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpModule,
     AppRoutingModule,
     MaterialModule,
-    // CoreModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
