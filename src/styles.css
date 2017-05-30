@@ -1,3 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/purple-green.css';
+
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~https://fonts.googleapis.com/icon?family=Raleway';
+
+.primary-color {
+    color: #9E9E9E!important;
+}
+
+.accent-color {
+    color: #FFC100!important;
+}
+
+.background-primary-color {
+    background-color: #9E9E9E!important;
+}
+
+.background-accent-color {
+    background-color: #FFC100!important;
+}
+
+.background-black {
+    background-color: black!important;
+}
+
+.white-text {
+    color: #FFF!important;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.title {
+    font-family: 'Raleway';
+    font-weight: bold
+}
+
+body {
+    font-family: 'Raleway'!important;
+    background-color: black!important;
+    color: #FFF!important;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFC100!important;
+}
+
+md-card, md-menu {
+    background-color: black!important;
+    color: #FFC100!important;
+}
+
