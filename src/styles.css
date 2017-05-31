@@ -27,19 +27,18 @@
     color: #FFF!important;
 }
 
-.fill-space {
-    flex: 1 1 auto;
-}
-
 .title {
     font-family: 'Raleway';
     font-weight: bold;
+    /*font-size: 2em;*/
+}
+
+.ro-outlet {
+    margin: 1.5em;
 }
 
 body {
     font-family: 'Raleway'!important;
-    background-color: black!important;
-    color: #FFF!important;
     margin: 0;
 }
 
@@ -50,4 +49,8 @@ h1, h2, h3, h4, h5, h6 {
 md-card, md-menu {
     /*background-color: black!important;*/
     color: #FFC100!important;
+}
+
+.mdTab {
+    color: black!important;
 }

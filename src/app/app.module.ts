@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from 'app/core/core.module';
@@ -18,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
     CoreModule

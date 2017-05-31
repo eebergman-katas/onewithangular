@@ -40,7 +40,7 @@ describe('FilmsListComponent', () => {
     });
 
     it('should have Films title', () => {
-      de = fixture.debugElement.query(By.css('h2'));
+      de = k.debugElement.query(By.css('h2'));
       // el = de.nativeElement;
       expect(component.title).toContain('Films');
       expect(de.)
