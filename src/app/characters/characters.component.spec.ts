@@ -3,16 +3,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharactersComponent } from './characters.component';
 
-describe('CharactersComponent', () => {
+fdescribe('CharactersComponent', () => {
   let component: CharactersComponent;
   let fixture: ComponentFixture<CharactersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CharactersComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      declarations: [CharactersComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,7 +25,18 @@ describe('CharactersComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a list of charLinks', () => {
-    // expect(component.charLinks).toBeDefined();
+  it('should have array of LabelLinks', () => {
+    expect(component.charLinks).toBeDefined();
+    expect(component.charLinks.length).toEqual(2);
+  });
+
+  it('should have characters entry in charLinks', () => {
+    expect(component.charLinks[0].label).toEqual('Characters');
+    expect(component.charLinks[0].link).toEqual('/characters');
+  });
+
+  it('should have species entry in charLinks', () => {
+    expect(component.charLinks[1].label).toEqual('Species');
+    expect(component.charLinks[1].link).toEqual('/characters/species');
   });
 });
