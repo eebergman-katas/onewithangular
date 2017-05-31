@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-grey, 500, 300, 900); // #9E9E9E, #E0E0E0, #212121
+$my-app-primary: mat-palette($mat-grey, 500, 300, 900); // #9E9E9E, #E0E0E0, 
 $my-app-accent:  mat-palette($mat-amber); // #FFC100
-$my-app-warn:    mat-palette($mat-deep-orange); // #FF5722
+$my-app-warn:    mat-palette($mat-grey, 900); // #212121
 
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
@@ -29,4 +29,16 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
     $sith-theme: mat-light-theme($sith-primary, $sith-accent, $sith-warn);
 
     @include angular-material-theme($sith-theme);
+}
+
+@mixin primary-background-contrast-color {
+    $primary-color: map-get($my-app-accent, 500);
+  $font-color: map-get($my-app-primary, 900);
+//   $font-color: map-get(map-get($my-app-primary, contrast), 900);
+  background-color: $primary-color;
+  color: $font-color !important;
+}
+
+.router-link-active {
+    @include primary-background-contrast-color;
 }

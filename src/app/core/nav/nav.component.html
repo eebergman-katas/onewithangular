@@ -1,3 +1,18 @@
-<md-toolbar class="title white-text" color="primary">
-        <span class="title">Star Wars</span>
+<md-toolbar color="warn">
+    <!--class="text-white background-black"-->
+    <h1 title="Star Wars" class="title">Star Wars</h1>
+
+    <div class="title-container">
+        <div class="title-button-row">
+            <a routerLink="/dashboard" routerLinkActive="router-link-active" md-button>
+                <span>Home</span></a>
+            <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
+                <span>Characters</span></a>
+            <a routerLink="/planets" routerLinkActive="router-link-active" md-button>
+                <span>Planets</span></a>
+            <a routerLink="/vehicles" routerLinkActive="router-link-active" md-button>
+                <span>Vehicles</span></a>
+        </div>
+    </div>
+
 </md-toolbar>
