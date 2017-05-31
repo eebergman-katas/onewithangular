@@ -40,10 +40,9 @@ describe('FilmsListComponent', () => {
     });
 
     it('should have Films title', () => {
-      de = k.debugElement.query(By.css('h2'));
+      de = fixture.debugElement.query(By.css('h2'));
       // el = de.nativeElement;
       expect(component.title).toContain('Films');
-      expect(de.)
     });
 
     // it('should have empty films array', () => {
