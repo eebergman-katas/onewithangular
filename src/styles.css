@@ -2,6 +2,7 @@
 
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~https://fonts.googleapis.com/icon?family=Raleway';
+
 .text-primary {
     color: #9E9E9E!important;
 }
@@ -26,17 +27,11 @@
     background-color: black!important;
 }
 
-.title {
-    font-family: 'Raleway';
-    /*font-size: 2em;*/
-}
-
 .ro-outlet {
     margin: 1.5em;
 }
 
 body {
-    font-family: 'Raleway'!important;
     margin: 0;
 }
 
@@ -59,3 +54,7 @@ md-card, md-menu {
     width: 25em;
 }
 
+* {
+    font-family: 'Raleway'!important;
+    font-weight: 900!important;
+}
