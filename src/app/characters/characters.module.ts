@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'app/shared/shared.module';
@@ -17,11 +17,12 @@ import { SpeciesDetailComponent } from './species-detail/species-detail.componen
     CharactersRoutingModule
   ],
   declarations: [
+    CharactersComponent,
     CharactersListComponent,
     CharactersDetailComponent,
-    CharactersComponent,
     SpeciesListComponent,
     SpeciesDetailComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CharactersModule { }

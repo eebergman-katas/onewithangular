@@ -1,7 +1,10 @@
-<p>vehicles works!</p>
-
-<div class="shift">
-    <a routerLink="starships">starships</a>
-</div>
+<md-toolbar color="primary">
+    <div class="title-container">
+        <a routerLink="/vehicles" routerLinkActive="router-link-active" md-button>
+            <span>Vehicles</span></a>
+        <a routerLink="/vehicles/starships" routerLinkActive="router-link-active" md-button>
+            <span>Starships</span></a>
+    </div>
+</md-toolbar>
 
 <router-outlet></router-outlet>
