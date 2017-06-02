@@ -5,7 +5,7 @@
 
     <div class="title-container">
         <div class="title-button-row">
-            <a routerLink="/dashboard" routerLinkActive="router-link-active" md-button>
+            <a routerLink="/films" routerLinkActive="router-link-active" md-button>
                 <span>Films</span></a>
             <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
                 <span>Characters</span></a>
@@ -14,5 +14,28 @@
             <a routerLink="/vehicles" routerLinkActive="router-link-active" md-button>
                 <span>Vehicles</span></a>
         </div>
+    </div>
+</md-toolbar>
+
+<md-toolbar color="primary">
+    <div class="title-container">
+        <div [ngSwitch]="router.url">
+            
+        </div>
+
+
+
+
+
+        <!--<div *ngIf="router.url === '/characters'">
+            <a routerLink="/characters/species" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <span>Species</span>
+            </a>
+        </div>
+        <div *ngIf="router.url === '/characters/species'">
+            <a routerLink="/characters" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <span>Characters</span>
+            </a>
+        </div>-->
     </div>
 </md-toolbar>

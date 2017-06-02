@@ -8,7 +8,7 @@ describe('FilmsListComponent', () => {
   let component: FilmsListComponent;
   let fixture: ComponentFixture<FilmsListComponent>;
   let de: DebugElement;
-  let el: HTMLElement;
+  const el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
