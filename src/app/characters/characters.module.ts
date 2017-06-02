@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersListComponent } from './characters-list/characters-list.component';
@@ -11,8 +12,15 @@ import { SpeciesDetailComponent } from './species-detail/species-detail.componen
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     CharactersRoutingModule
   ],
-  declarations: [CharactersListComponent, CharactersDetailComponent, CharactersComponent, SpeciesListComponent, SpeciesDetailComponent]
+  declarations: [
+    CharactersListComponent,
+    CharactersDetailComponent,
+    CharactersComponent,
+    SpeciesListComponent,
+    SpeciesDetailComponent
+  ]
 })
 export class CharactersModule { }

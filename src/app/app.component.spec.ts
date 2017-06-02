@@ -13,7 +13,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -35,4 +35,5 @@ describe('AppComponent', () => {
   //   const compiled = fixture.debugElement.nativeElement;
   //   expect(compiled.querySelector('h1').textContent).toContain('app works!');
   // }));
+
 });

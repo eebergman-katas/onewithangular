@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharactersComponent } from './characters.component';
 
-fdescribe('CharactersComponent', () => {
+describe('CharactersComponent', () => {
   let component: CharactersComponent;
   let fixture: ComponentFixture<CharactersComponent>;
 
@@ -32,11 +32,15 @@ fdescribe('CharactersComponent', () => {
 
   it('should have characters entry in charLinks', () => {
     expect(component.charLinks[0].label).toEqual('Characters');
-    expect(component.charLinks[0].link).toEqual('/characters');
+    expect(component.charLinks[0].link).toEqual('');
   });
 
   it('should have species entry in charLinks', () => {
     expect(component.charLinks[1].label).toEqual('Species');
     expect(component.charLinks[1].link).toEqual('/characters/species');
   });
+
+
+
+
 });

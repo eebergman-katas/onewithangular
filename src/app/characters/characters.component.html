@@ -1,22 +1,3 @@
-<nav md-tab-nav-bar>
-    <a md-tab-link 
-        *ngFor="let charLink of charLinks; let i = index" 
-        [routerLink]="charLink.link"
-        [routerLinkActive]="activeLinkIndex === i"
-        (click)="activeLinkIndex = i" >
-        {{ charLink.label }}
-    </a>
-</nav>
-
-
-
 <a routerLink="species">species</a>
 
 <router-outlet></router-outlet>
-
-
-
-<!--
-    [routerLinkActive]="activeLinkIndex === i"
-    (click)="activeLinkIndex = i"
-    -->

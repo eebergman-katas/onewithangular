@@ -34,7 +34,6 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @mixin primary-background-contrast-color {
     $primary-color: map-get($my-app-accent, 500);
   $font-color: map-get($my-app-primary, 900);
-//   $font-color: map-get(map-get($my-app-primary, contrast), 900);
   background-color: $primary-color;
   color: $font-color !important;
 }
