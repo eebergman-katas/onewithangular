@@ -1,0 +1,5 @@
+NavComponent
+    *ngFor md-tab group and info
+
+CharacterModule
+    *ngIf, ngTemplate show which or the other button

@@ -1,9 +1,15 @@
 <md-toolbar color="primary">
     <div class="title-container">
-        <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
-            <span>Characters</span></a>
-        <a routerLink="/characters/species" routerLinkActive="router-link-active" md-button>
-            <span>Species</span></a>
+        <div *ngIf="router.url === '/characters'">
+            <a routerLink="/characters/species" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <span>Species</span>
+            </a>
+        </div>
+        <div *ngIf="router.url === '/characters/species'">
+            <a routerLink="/characters" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <span>Characters</span>
+            </a>
+        </div>
     </div>
 </md-toolbar>
 

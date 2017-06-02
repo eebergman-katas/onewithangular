@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { LabelLink } from 'app/core';
 
@@ -9,18 +8,7 @@ import { LabelLink } from 'app/core';
   templateUrl: './characters.component.html',
   styles: []
 })
-export class CharactersComponent implements OnInit {
-  public charLinks: LabelLink[];
-  public activeLinkIndex = 0;
-
-  constructor() {
-    this.charLinks = [
-      { label: 'Characters', link: '' },
-      { label: 'Species', link: '/characters/species' }
-    ];
-  }
-
-  ngOnInit() {
-  }
-
+export class CharactersComponent {
+  constructor(public router: Router) { }
 }
+
