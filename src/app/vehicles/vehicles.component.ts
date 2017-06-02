@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-vehicles',
-  templateUrl: './vehicles.component.html',
+  template: '<router-outlet></router-outlet>',
   styles: []
 })
 export class VehiclesComponent { }

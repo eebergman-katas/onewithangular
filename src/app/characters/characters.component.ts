@@ -5,7 +5,7 @@ import { LabelLink } from 'app/core';
 
 @Component({
   selector: 'app-characters',
-  templateUrl: './characters.component.html',
+  template: '<router-outlet></router-outlet>',
   styles: []
 })
 export class CharactersComponent {
