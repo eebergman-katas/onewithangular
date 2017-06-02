@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'characters', loadChildren: 'app/characters/characters.module#CharactersModule' },
-  { path: 'planets', loadChildren: 'app/planets/planets.module#PlanetsModule' }
+  { path: 'planets', loadChildren: 'app/planets/planets.module#PlanetsModule' },
+  { path: 'vehicles', loadChildren: 'app/vehicles/vehicles.module#VehiclesModule' }
 ];
 
 @NgModule({

@@ -27,7 +27,18 @@
     background-color: black!important;
 }
 
-.ro-outlet {
+.title-button-row {
+    padding-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title-container {
+    width: 25em;
+}
+
+.shift {
     margin: 1.5em;
 }
 
@@ -39,19 +50,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFC100!important;
 }
 
+p {
+    margin: 1.5em;
+}
+
 md-card, md-menu {
     color: #FFC100!important;
-}
-
-.title-button-row {
-    padding-left: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.title-container {
-    width: 25em;
 }
 
 * {
