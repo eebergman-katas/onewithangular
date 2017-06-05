@@ -43,7 +43,7 @@
 }
 
 .side-nav-container {
-    height: 100em;
+    height: 50em;
     width: 100%;
 }
 
@@ -51,6 +51,7 @@
     max-width: 25%;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
 }
 
 body {

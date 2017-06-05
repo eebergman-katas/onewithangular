@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'app/shared/shared.module';
@@ -23,6 +23,5 @@ import { StarshipsDetailComponent } from './starships-detail/starships-detail.co
     StarshipsListComponent,
     StarshipsDetailComponent
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class VehiclesModule { }

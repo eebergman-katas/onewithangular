@@ -27,7 +27,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CoreModule
   ],
   providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

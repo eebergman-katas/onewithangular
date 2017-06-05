@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { LabelLink } from 'app/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-characters',
-  template: '<router-outlet></router-outlet>',
-  styles: []
+  templateUrl: './characters.component.html',
+  styleUrls: ['./characters.component.css']
 })
-export class CharactersComponent {
-  constructor(public router: Router) { }
+export class CharactersComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 }
 

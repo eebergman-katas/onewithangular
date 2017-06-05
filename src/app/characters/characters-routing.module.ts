@@ -8,28 +8,22 @@ import { SpeciesListComponent } from 'app/characters/species-list/species-list.c
 import { SpeciesDetailComponent } from 'app/characters/species-detail/species-detail.component';
 
 const routes: Routes = [
-  {
-    path: '', component: CharactersComponent, children: [
-      {
-        path: '', component: CharactersListComponent, children: [
-          {
-            path: '', component: CharactersDetailComponent
-          }
+    { path: '', component: CharactersComponent, children: [
+
+            { path: '', component: CharactersListComponent, children: [
+                    { path: '', component: CharactersDetailComponent }
+                ]
+            },
+            { path: 'species', component: SpeciesListComponent, children: [
+                    { path: '', component: SpeciesDetailComponent }
+                ]
+            }
         ]
-      },
-      {
-        path: 'species', component: SpeciesListComponent, children: [
-          {
-            path: '', component: SpeciesDetailComponent
-          }
-        ]
-      }
-    ]
-  }
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class CharactersRoutingModule { }

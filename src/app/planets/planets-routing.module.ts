@@ -6,13 +6,9 @@ import { PlanetsListComponent } from 'app/planets/planets-list/planets-list.comp
 import { PlanetsDetailComponent } from 'app/planets/planets-detail/planets-detail.component';
 
 const routes: Routes = [
-  {
-    path: '', component: PlanetsComponent, children: [
-      {
-        path: '', component: PlanetsListComponent, children: [
-          {
-            path: '', component: PlanetsDetailComponent
-          }
+  { path: '', component: PlanetsComponent, children: [
+      { path: '', component: PlanetsListComponent, children: [
+          { path: '', component: PlanetsDetailComponent }
         ]
       }
     ]

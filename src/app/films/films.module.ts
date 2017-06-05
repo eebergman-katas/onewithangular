@@ -15,9 +15,9 @@ import { FilmsDetailComponent } from './films-detail/films-detail.component';
     FilmsRoutingModule
   ],
   declarations: [
+    FilmsComponent,
     FilmsListComponent,
-    FilmsDetailComponent,
-    FilmsComponent
+    FilmsDetailComponent
   ]
 })
 export class FilmsModule { }

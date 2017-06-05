@@ -9,7 +9,7 @@ import { Character } from 'app/core';
 @Component({
   selector: 'app-characters-list',
   templateUrl: './characters-list.component.html',
-  styles: []
+  styleUrls: ['./characters-list.component.css']
 })
 
 export class CharactersListComponent implements OnInit {

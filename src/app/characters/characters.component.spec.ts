@@ -24,23 +24,4 @@ describe('CharactersComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should have array of LabelLinks', () => {
-    expect(component.charLinks).toBeDefined();
-    expect(component.charLinks.length).toEqual(2);
-  });
-
-  it('should have characters entry in charLinks', () => {
-    expect(component.charLinks[0].label).toEqual('Characters');
-    expect(component.charLinks[0].link).toEqual('');
-  });
-
-  it('should have species entry in charLinks', () => {
-    expect(component.charLinks[1].label).toEqual('Species');
-    expect(component.charLinks[1].link).toEqual('/characters/species');
-  });
-
-
-
-
 });

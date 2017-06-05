@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-characters-detail',
   templateUrl: './characters-detail.component.html',
-  styles: []
+  styleUrls: ['./characters-detail.component.css']
 })
 export class CharactersDetailComponent implements OnInit {
 

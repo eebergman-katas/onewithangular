@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vehicles',
-  template: '<router-outlet></router-outlet>',
-  styles: []
+  templateUrl: './vehicles.component.html',
+  styleUrls: ['./vehicles.component.html']
 })
-export class VehiclesComponent { }
+export class VehiclesComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

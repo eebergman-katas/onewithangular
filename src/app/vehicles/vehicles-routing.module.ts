@@ -8,20 +8,13 @@ import { StarshipsListComponent } from 'app/vehicles/starships-list/starships-li
 import { StarshipsDetailComponent } from 'app/vehicles/starships-detail/starships-detail.component';
 
 const routes: Routes = [
-  {
-    path: '', component: VehiclesComponent, children: [
-      {
-        path: '', component: VehiclesListComponent, children: [
-          {
-            path: '', component: VehiclesDetailComponent
-          }
+  { path: '', component: VehiclesComponent, children: [
+      { path: '', component: VehiclesListComponent, children: [
+          { path: '', component: VehiclesDetailComponent }
         ]
       },
-      {
-        path: 'starships', component: StarshipsListComponent, children: [
-          {
-            path: '', component: StarshipsDetailComponent
-          }
+      { path: 'starships', component: StarshipsListComponent, children: [
+          { path: '', component: StarshipsDetailComponent }
         ]
       }
     ]
