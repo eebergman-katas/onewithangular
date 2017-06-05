@@ -1,30 +1,4 @@
 <md-tab-group>
-    <md-tab label="A New Hope">
-        <p>Hope</p>
+    <md-tab *ngFor="let film of films" [label]=film>
     </md-tab>
-
-    <md-tab label="The Empire Strikes Back">
-        <p>Empire</p>
-    </md-tab>
-
-    <md-tab label="Return of the Jedi">
-        <p>Return of the Jedi</p>
-    </md-tab>
-
-    <md-tab label="Phantom Menace">
-        <p>Phantom Menace</p>
-    </md-tab>
-
-    <md-tab label="Attack of the Clones">
-        <p>Clones</p>
-    </md-tab>
-
-    <md-tab label="Revenge of the Sith">
-        <p>Sith</p>
-    </md-tab>
-
-    <md-tab label="The Force Awakens">
-        <p>Awakens</p>
-    </md-tab>
-
 </md-tab-group>

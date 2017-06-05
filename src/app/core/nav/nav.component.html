@@ -5,7 +5,7 @@
 
     <div class="title-container">
         <div class="title-button-row">
-            <a routerLink="/films" routerLinkActive="router-link-active" md-button>
+            <a routerLink="/dashboard" routerLinkActive="router-link-active" md-button>
                 <span>Films</span></a>
             <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
                 <span>Characters</span></a>
@@ -17,39 +17,39 @@
     </div>
 </md-toolbar>
 
-<md-toolbar color="primary">
-    <div class="title-container">
-        <div [ngSwitch]="router.url">
-            <div *ngSwitchCase="'/films'">
-                <span>films</span>
-            </div>
+<div *ngIf="router.url !== '/dashboard'">
 
-            <div *ngSwitchCase="'/characters'">
-                <a routerLink="/characters/species" routerLinkActive="router-link-active" md-raised-button color="accent">
+    <md-toolbar color="primary">
+        <div class="title-container">
+            <div [ngSwitch]="router.url">
+                <div *ngSwitchCase="'/films'">
+                    <span>films</span>
+                </div>
+
+                <div *ngSwitchCase="'/characters'">
+                    <a routerLink="/characters/species" routerLinkActive="router-link-active" md-raised-button color="accent">
                     <span>Species</span>
                 </a>
-            </div>
+                </div>
 
-            <div *ngSwitchCase="'/characters/species'">
-                <a routerLink="/characters" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <div *ngSwitchCase="'/characters/species'">
+                    <a routerLink="/characters" routerLinkActive="router-link-active" md-raised-button color="accent">
                     <span>Characters</span>
                 </a>
-            </div>
+                </div>
 
-            <div *ngSwitchCase="'/vehicles'">
-                <a routerLink="/vehicles/starships" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <div *ngSwitchCase="'/vehicles'">
+                    <a routerLink="/vehicles/starships" routerLinkActive="router-link-active" md-raised-button color="accent">
                     <span>Starships</span>
                 </a>
-            </div>
+                </div>
 
-            <div *ngSwitchCase="'/vehicles/starships'">
-                <a routerLink="/vehicles" routerLinkActive="router-link-active" md-raised-button color="accent">
+                <div *ngSwitchCase="'/vehicles/starships'">
+                    <a routerLink="/vehicles" routerLinkActive="router-link-active" md-raised-button color="accent">
                     <span>Vehicles</span>
                 </a>
+                </div>
             </div>
-
-
         </div>
-    </div>
-
-</md-toolbar>
+    </md-toolbar>
+</div>

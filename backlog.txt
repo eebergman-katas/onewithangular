@@ -1,5 +1,17 @@
-NavComponent
+character.component.ts 
+    while "next" !== null get "http://swapi.co/api/people/?page=2"
+        where 2 === <i>
+
+Char fields that are links
+        -homeworld, species
+    !- Also arrays
+        -films, species, starships, vehicles
+
+
+
+
+// NavComponent
     *ngFor md-tab group and info
 
-CharacterModule
+// CharacterModule
     *ngIf, ngTemplate show which or the other button

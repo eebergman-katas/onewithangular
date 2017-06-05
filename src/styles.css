@@ -42,6 +42,17 @@
     margin: 1.5em;
 }
 
+.side-nav-container {
+    height: 100em;
+    width: 100%;
+}
+
+.side-nav-container md-sidenav {
+    max-width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     margin: 0;
 }

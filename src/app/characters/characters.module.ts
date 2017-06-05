@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 import { SharedModule } from 'app/shared/shared.module';
 import { CharactersRoutingModule } from './characters-routing.module';
@@ -13,6 +14,7 @@ import { SpeciesDetailComponent } from './species-detail/species-detail.componen
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
     SharedModule,
     CharactersRoutingModule
   ],
