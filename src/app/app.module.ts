@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from 'app/shared/shared.module';
 import { CoreModule } from 'app/core/core.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,9 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
     CoreModule
   ],
   providers: [],

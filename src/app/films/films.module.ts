@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
-import { SharedModule } from 'app/shared/shared.module';
 import { FilmsRoutingModule } from './films-routing.module';
 
 import { FilmsComponent } from './films.component';
@@ -11,7 +11,7 @@ import { FilmsDetailComponent } from './films-detail/films-detail.component';
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule,
+    MaterialModule,
     FilmsRoutingModule
   ],
   declarations: [

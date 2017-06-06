@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
-import { SharedModule } from 'app/shared/shared.module';
 import { CharactersRoutingModule } from './characters-routing.module';
 
 import { CharactersComponent } from './characters.component';
@@ -15,7 +15,7 @@ import { SpeciesDetailComponent } from './species-detail/species-detail.componen
   imports: [
     CommonModule,
     HttpModule,
-    SharedModule,
+    MaterialModule,
     CharactersRoutingModule
   ],
   declarations: [

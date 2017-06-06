@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
 
-import { SharedModule } from 'app/shared/shared.module';
 import { VehiclesRoutingModule } from './vehicles-routing.module';
 
 import { VehiclesComponent } from './vehicles.component';
@@ -13,7 +13,7 @@ import { StarshipsDetailComponent } from './starships-detail/starships-detail.co
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule,
+    MaterialModule,
     VehiclesRoutingModule
   ],
   declarations: [
