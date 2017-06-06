@@ -7,13 +7,9 @@ Char fields that are links
     !- Also arrays
         -films, species, starships, vehicles
 
-HttpModule raised to SharedModule !! HttpModule is in the app.mod, may duplicate??
-
 lower toolbars to char/planet/vehicle/film? levels
 
+add new species module
 
 // NavComponent
     *ngFor md-tab group and info
-
-// CharacterModule
-    *ngIf, ngTemplate show which or the other button
