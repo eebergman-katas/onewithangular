@@ -13,3 +13,7 @@ add new species module
 
 // NavComponent
     *ngFor md-tab group and info
+
+
+// CharCom
+    Sort names by alpha, by movie, etc...
