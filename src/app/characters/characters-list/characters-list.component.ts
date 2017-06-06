@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Character } from 'app/core';
+import { MdMenu } from '@angular/material/material';
 
 @Component({
   selector: 'app-characters-list',

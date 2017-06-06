@@ -11,8 +11,13 @@
                 <span>Characters</span></a>
             <a routerLink="/planets" routerLinkActive="router-link-active" md-button>
                 <span>Planets</span></a>
-            <a routerLink="/vehicles" routerLinkActive="router-link-active" md-button>
-                <span>Vehicles</span></a>
+            <button md-button [mdMenuTriggerFor]="menu">Vehicles</button>
+            <md-menu #menu="mdMenu">
+                <a routerLink="/vehicles" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:true}" md-menu-item>
+                    <button md-menu-item>Vehicles</button></a>
+                <a routerLink="/vehicles/starships" routerLinkActive="router-link-active" md-menu-item>
+                <button md-menu-item>Starships</button></a>
+            </md-menu>
         </div>
     </div>
 </md-toolbar>

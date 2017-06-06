@@ -20,6 +20,6 @@ import { CharactersDetailComponent } from './characters-detail/characters-detail
     CharactersComponent,
     CharactersListComponent,
     CharactersDetailComponent
-  ],
+  ]
 })
 export class CharactersModule { }
