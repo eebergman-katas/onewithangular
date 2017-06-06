@@ -1,6 +1,7 @@
 <md-sidenav-container class="side-nav-container">
-    <md-sidenav #sidenav mode="side" opened="true">
-        <h3>Characters</h3>
+    <md-sidenav #sidenav mode="side" opened="true" disableClose="true">
+        <h2 class="shift">Characters</h2>
+        <hr>
         <md-list *ngFor="let char of chars">
             <md-list-item>
                 {{ char.name }}
