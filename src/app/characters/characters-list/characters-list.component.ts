@@ -1,42 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Character, DataService } from '../../core';
 
-import { Character } from 'app/core';
-import { MdMenu } from '@angular/material/material';
 
 @Component({
   selector: 'app-characters-list',
   templateUrl: './characters-list.component.html',
-  styleUrls: ['./characters-list.component.css']
+  styleUrls: ['./characters-list.component.css'],
 })
 
 export class CharactersListComponent implements OnInit {
-  private api: string;
   public chars: Character[];
 
-  constructor(private http: Http) {
-    this.api = 'http://swapi.co/api/people/';
+  constructor(private dataService: DataService) {
     this.chars = [];
   }
 
   ngOnInit() {
-    this.getCharacters();
-
-    setTimeout(() => {
-    console.log(this.chars);
-    }, 1000);
+  //   this.getCharacters();
   }
 
-  private getCharacters() {
-    this.getCharactersFromDB()
-      .subscribe(chars => this.chars = chars);
-  }
-
-  private getCharactersFromDB(): Observable<Character[]> {
-    return this.http.get(this.api)
-      .map((res: Response) => res.json().results);
-  }
+  // private getCharacters() {
+  //   this.dataService.fetchCharacters()
+  //     .subscribe(chars => this.chars = chars);
+  // }
 }

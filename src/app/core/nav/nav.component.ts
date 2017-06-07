@@ -8,8 +8,12 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+  }
 
   ngOnInit() {
   }
+
+  // changeVehicleTab(router: Router) {
+  // }
 }
