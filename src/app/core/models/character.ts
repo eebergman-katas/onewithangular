@@ -1,4 +1,4 @@
-export class Character {
+export class FilmCharacter {
     constructor(
         public name: string,
         public birth_year?: string,

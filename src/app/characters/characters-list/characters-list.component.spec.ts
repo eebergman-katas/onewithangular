@@ -3,9 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { CharactersListComponent } from './characters-list.component';
-import { DataService } from 'app/core';
+import { DataService, ConfigService } from 'app/core';
 
-fdescribe('CharactersListComponent', () => {
+describe('CharactersListComponent', () => {
   let component: CharactersListComponent;
   let fixture: ComponentFixture<CharactersListComponent>;
 
@@ -13,7 +13,7 @@ fdescribe('CharactersListComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       declarations: [CharactersListComponent],
-      providers: [DataService],
+      providers: [DataService, ConfigService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
@@ -31,6 +31,12 @@ fdescribe('CharactersListComponent', () => {
   describe('Before detectChanges', () => {
     it('should not have characters', () => {
       expect(component.chars.length).toEqual(0);
+    });
+  });
+
+  describe('After detectChanges', () => {
+    beforeEach(() => {
+      fixture.detectChanges();
     });
   });
 });

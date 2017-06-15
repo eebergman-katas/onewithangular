@@ -13,7 +13,4 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // changeVehicleTab(router: Router) {
-  // }
 }

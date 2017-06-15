@@ -2,6 +2,31 @@ character.component.ts
     while "next" !== null get "http://swapi.co/api/people/?page=2"
         where 2 === <i>
 
+a service per datatype
+import config something
+    public apiBase = 'http://swapi/api/'
+    public apiMiddle = '/?page='
+    public apiPage: number = 0;
+    
+    ctor() {
+        const = [
+            'people',
+            'planets'
+            'starships'
+        ]
+    }
+
+
+char.service
+
+import { configSomething } from ''
+
+fetchCharacters(): Observable<Char[]> {
+    return 
+}
+
+
+
 Char fields that are links
         -homeworld, species
     !- Also arrays

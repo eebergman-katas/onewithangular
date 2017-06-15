@@ -12,20 +12,18 @@
             <a routerLink="/planets" routerLinkActive="router-link-active" md-button>
                 <span>Planets</span></a>
 
-            <div *ngIf="router.url.includes('vehicles'); then onVehicle else offVehicle"> </div>
-            <ng-template #offVehicle>
-                <button md-button [mdMenuTriggerFor]="menu">Vehicles</button>
-            </ng-template>
-            <ng-template #onVehicle>
-                <button class="router-link-active" md-button [mdMenuTriggerFor]="menu">Vehicles</button>
-            </ng-template>
-
             <md-menu #menu="mdMenu">
-                <a routerLink="/vehicles" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:true}" md-menu-item>
+                <a routerLink="/vehicles" routerLinkActive #rla="routerLinkActive" md-menu-item>
                     <button md-menu-item>Vehicles</button></a>
-                <a routerLink="/vehicles/starships" routerLinkActive="router-link-active" md-menu-item>
+                <a routerLink="/vehicles/starships" md-menu-item>
                 <button md-menu-item>Starships</button></a>
             </md-menu>
+
+            <button md-button [mdMenuTriggerFor]="menu" [ngClass]="rla.isActive ? 'router-link-active' : ''">
+                Vehicles
+            </button>
+
+            
         </div>
     </div>
 </md-toolbar>

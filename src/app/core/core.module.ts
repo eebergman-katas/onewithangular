@@ -5,7 +5,7 @@ import { MaterialModule } from '@angular/material';
 
 
 import { NavComponent } from './nav/nav.component';
-import { DataService } from 'app/core';
+import { DataService, ConfigService } from 'app/core';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { DataService } from 'app/core';
   ],
   exports: [NavComponent],
   declarations: [NavComponent],
-  providers: [DataService]
+  providers: [DataService, ConfigService]
 })
 export class CoreModule { }

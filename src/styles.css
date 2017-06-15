@@ -43,7 +43,7 @@
 }
 
 .side-nav-container {
-    height: 50em;
+    height: 45em;
     width: 100%;
 }
 
@@ -60,6 +60,10 @@ body {
 
 p {
     margin: 1.5em;
+}
+
+md-list {
+    overflow: scroll;
 }
 
 md-card, md-menu {
