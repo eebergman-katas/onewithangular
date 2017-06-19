@@ -2,7 +2,7 @@
     <md-sidenav #sidenav mode="side" opened="true" disableClose="true">
         <h2 class="shift">Characters</h2>
         <hr>
-        <md-list *ngFor="let char of (chars | async)">
+        <md-list *ngFor="let char of chars">
             <md-list-item>
                 {{ char.name }}
             </md-list-item>
