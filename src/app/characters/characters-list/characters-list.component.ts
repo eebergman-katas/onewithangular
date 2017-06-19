@@ -25,7 +25,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   private getCharacters() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) { // change to fetching page numbers
       this.dataService.fetchSwapiResults(this.source, i)
         .subscribe(char => this.chars.push(...char));
     }
