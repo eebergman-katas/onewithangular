@@ -19,11 +19,11 @@
                 <button md-menu-item>Starships</button></a>
             </md-menu>
 
-            <button md-button [mdMenuTriggerFor]="menu" [ngClass]="rla.isActive ? 'router-link-active' : ''">
-                Vehicles
-            </button>
+            <a md-button [mdMenuTriggerFor]="menu" [ngClass]="rla.isActive ? 'router-link-active' : ''">
+               <span>Vehicles</span>
+            </a>
 
-            
+
         </div>
     </div>
 </md-toolbar>
