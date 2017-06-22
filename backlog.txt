@@ -1,38 +1,13 @@
-character.component.ts 
-    while "next" !== null get "http://swapi.co/api/people/?page=2"
-        where 2 === <i>
-
 a service per datatype
-import config something
-    public apiBase = 'http://swapi/api/'
-    public apiMiddle = '/?page='
-    public apiPage: number = 0;
-    
-    ctor() {
-        const = [
-            'people',
-            'planets'
-            'starships'
-        ]
-    }
 
+ADD A LOADING SWIRL
 
-char.service
-
-import { configSomething } from ''
-
-fetchCharacters(): Observable<Char[]> {
-    return 
-}
-
-
+Add ID to character, and method to collect it?
 
 Char fields that are links
         -homeworld, species
     !- Also arrays
         -films, species, starships, vehicles
-
-lower toolbars to char/planet/vehicle/film? levels
 
 add new species module
 

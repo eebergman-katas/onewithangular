@@ -2,6 +2,11 @@
     <md-sidenav #sidenav mode="side" opened="true" disableClose="true">
         <h2 class="shift">{{ title }}</h2>
         <hr>
+
+        <div *ngIf="chars.length < 20">
+            <md-progress-spinner class="shift" color="accent" mode="indeterminate">
+            </md-progress-spinner>
+        </div>
         <md-list *ngFor="let char of chars">
             <md-list-item>
                 {{ char.name }}

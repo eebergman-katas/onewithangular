@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Character, DataService } from '../../core';
+import { Character, CharacterService } from '../../core';
 
 
 @Component({
@@ -13,7 +12,7 @@ export class CharactersListComponent implements OnInit {
   public title = 'Characters';
   public chars: Character[];
 
-  constructor(private dataService: DataService) {
+  constructor(private charService: CharacterService) {
     this.chars = [];
   }
 
@@ -22,7 +21,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   private getCharacters() {
-    this.dataService.fetchSwapiResults('people/')
+    this.charService.fetchCharacters('people/')
       .subscribe(char => this.chars.push(...char));
   }
 }

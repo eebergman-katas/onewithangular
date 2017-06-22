@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
 
 import { CharactersListComponent } from './characters-list.component';
-import { DataService, ConfigService } from 'app/core';
+import * as testing from '../../../testing/index';
+import { CharacterService, ConfigService } from 'app/core';
 
 fdescribe('CharactersListComponent', () => {
   let component: CharactersListComponent;
@@ -16,7 +17,11 @@ fdescribe('CharactersListComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       declarations: [CharactersListComponent],
-      providers: [DataService, ConfigService],
+      providers: [
+        CharacterService,
+        ConfigService,
+        { provide: CharacterService, useClass: testing.DataServiceStub }
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
@@ -48,8 +53,8 @@ fdescribe('CharactersListComponent', () => {
       expect(htmlElement.textContent).toEqual('Characters');
     });
 
-    it('should have populate chars[]', () => {
-      expect(component.chars.length).toBeGreaterThan(20);
+    it('should have populate chars[]', () => {3
+      expect(component.chars.length).toEqual(testing.characters.length);
     });
   });
 });

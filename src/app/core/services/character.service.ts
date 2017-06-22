@@ -5,15 +5,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/combineLatest';
 import 'rxjs/add/operator/switchMap';
 
-import { Character } from 'app/core';
-import { ConfigService } from './config.service';
+import { Character, ConfigService } from 'app/core';
 
 @Injectable()
-export class DataService {
+export class CharacterService {
 
   constructor(private http: Http, private configService: ConfigService) { }
 
-  public fetchSwapiResults(source: string): Observable<any[]> {
+  public fetchCharacters(source: string): Observable<any[]> {
 
     return this.http
       .get(`${this.configService.apiBase}${source}${this.configService.apiPage}1`)
