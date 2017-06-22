@@ -3,12 +3,14 @@ import { XHRBackend, HttpModule } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 
 import { DataService } from './data.service';
+import { ConfigService } from 'app/core';
 
 describe('DataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       providers: [
+        ConfigService,
         DataService,
         { provide: XHRBackend, useClass: MockBackend }
       ]

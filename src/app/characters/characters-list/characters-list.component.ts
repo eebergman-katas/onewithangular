@@ -10,8 +10,8 @@ import { FilmCharacter, DataService } from '../../core';
 })
 
 export class CharactersListComponent implements OnInit {
+  public title = 'Characters';
   public chars: FilmCharacter[];
-  private source = 'people/';
 
   constructor(private dataService: DataService) {
     this.chars = [];
@@ -22,7 +22,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   private getCharacters() {
-    this.dataService.fetchSwapiResults(this.source)
+    this.dataService.fetchSwapiResults('people/')
       .subscribe(char => this.chars.push(...char));
   }
 }

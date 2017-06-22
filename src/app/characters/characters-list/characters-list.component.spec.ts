@@ -1,13 +1,16 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
+import { By } from '@angular/platform-browser';
 
 import { CharactersListComponent } from './characters-list.component';
 import { DataService, ConfigService } from 'app/core';
 
-describe('CharactersListComponent', () => {
+fdescribe('CharactersListComponent', () => {
   let component: CharactersListComponent;
   let fixture: ComponentFixture<CharactersListComponent>;
+  let debugElement: DebugElement;
+  let htmlElement: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -37,6 +40,12 @@ describe('CharactersListComponent', () => {
   describe('After detectChanges', () => {
     beforeEach(() => {
       fixture.detectChanges();
+    });
+
+    it('should have Characters h2', () => {
+      debugElement = fixture.debugElement.query(By.css('h2'));
+      htmlElement = debugElement.nativeElement;
+      expect(htmlElement.textContent).toEqual('Characters');
     });
   });
 });
