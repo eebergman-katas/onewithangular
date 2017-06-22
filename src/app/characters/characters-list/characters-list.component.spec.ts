@@ -47,5 +47,9 @@ fdescribe('CharactersListComponent', () => {
       htmlElement = debugElement.nativeElement;
       expect(htmlElement.textContent).toEqual('Characters');
     });
+
+    it('should have populate chars[]', () => {
+      expect(component.chars.length).toBeGreaterThan(20);
+    });
   });
 });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FilmCharacter, DataService } from '../../core';
+import { Character, DataService } from '../../core';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { FilmCharacter, DataService } from '../../core';
 
 export class CharactersListComponent implements OnInit {
   public title = 'Characters';
-  public chars: FilmCharacter[];
+  public chars: Character[];
 
   constructor(private dataService: DataService) {
     this.chars = [];

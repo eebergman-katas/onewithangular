@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/combineLatest';
 import 'rxjs/add/operator/switchMap';
 
-import { FilmCharacter } from 'app/core';
+import { Character } from 'app/core';
 import { ConfigService } from './config.service';
 
 @Injectable()
