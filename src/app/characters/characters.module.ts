@@ -8,6 +8,7 @@ import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersComponent } from './characters.component';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { CharactersDetailComponent } from './characters-detail/characters-detail.component';
+import { CharacterService } from 'app/characters/character.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { CharactersDetailComponent } from './characters-detail/characters-detail
     CharactersComponent,
     CharactersListComponent,
     CharactersDetailComponent
-  ]
+  ],
+  providers: [CharacterService]
 })
 export class CharactersModule { }

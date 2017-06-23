@@ -2,7 +2,8 @@ import { TestBed, inject } from '@angular/core/testing';
 import { XHRBackend, HttpModule } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 
-import { ConfigService, CharacterService } from 'app/core';
+import { ConfigService } from 'app/core';
+import { CharacterService } from 'app/characters/character.service';
 
 describe('DataService', () => {
   beforeEach(() => {

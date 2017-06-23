@@ -5,7 +5,6 @@ import { MaterialModule } from '@angular/material';
 
 
 import { NavComponent } from './nav/nav.component';
-import { CharacterService } from './services/character.service';
 import { ConfigService } from './services/config.service';
 
 @NgModule({
@@ -16,6 +15,6 @@ import { ConfigService } from './services/config.service';
   ],
   exports: [NavComponent],
   declarations: [NavComponent],
-  providers: [CharacterService, ConfigService]
+  providers: [ConfigService]
 })
 export class CoreModule { }

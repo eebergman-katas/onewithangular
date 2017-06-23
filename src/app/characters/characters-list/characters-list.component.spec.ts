@@ -5,7 +5,8 @@ import { By } from '@angular/platform-browser';
 
 import { CharactersListComponent } from './characters-list.component';
 import * as testing from '../../../testing/index';
-import { CharacterService, ConfigService } from 'app/core';
+import { ConfigService } from 'app/core';
+import { CharacterService } from 'app/characters/character.service';
 
 fdescribe('CharactersListComponent', () => {
   let component: CharactersListComponent;
