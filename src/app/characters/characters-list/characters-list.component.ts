@@ -22,7 +22,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   private getCharacters() {
-    this.charService.fetchCharacters('people/')
+    this.charService.fetchCharacters()
       .subscribe(char => this.chars.push(...char));
   }
 }

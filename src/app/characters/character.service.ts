@@ -9,40 +9,31 @@ import { Character, ConfigService } from 'app/core';
 
 @Injectable()
 export class CharacterService {
-  private apiURL = `http://swapi.co/api/people/?page=`;
+  private characterApiUrl = `http://swapi.co/api/people/?page=`;
   private observables: any[];
 
-  constructor(
-    private http: Http,
-    private configService: ConfigService,
-  ) {
+  constructor(private http: Http) {
     this.observables = [];
   }
 
-  public fetchCharacters(source: string): Observable<any[]> {
+  public fetchCharacters(): Observable<Character[]> {
     return this.http
-      .get(`${this.apiURL}1`)
+      .get(`${this.characterApiUrl}1`)
       .map(results => results.json())
-      .switchMap((json) => { // cut here
-        const pages = this.getPagesCount(json);
-
-
-        this.getPagesData(pages);
-
-
-        return Observable
-          .forkJoin(this.observables)
-          .map(results => results.map((result: Response) => result.json().results))
-          .map(results => [].concat(...results))
-          .map(this.sortAlpha);
+      .switchMap((json) => {
+        return this.formatDataFromPages(json);
       });
   }
 
-  private getPagesData(pages: number) {
-    for (let i = 1; i < pages; i++) {
-      this.observables.push(this.http
-        .get(`${this.apiURL}${i}`));
-    }
+  private formatDataFromPages(json: any): Observable<Character[]> {
+    const pages = this.getPagesCount(json);
+    this.collectDataFromPages(pages);
+
+    return Observable
+      .forkJoin(this.observables)
+      .map(results => results.map((result: Response) => result.json().results))
+      .map(results => [].concat(...results))
+      .map(this.sortByCharName);
   }
 
   private getPagesCount(json: any): number {
@@ -51,7 +42,14 @@ export class CharacterService {
       : (json.count / 10) + 1;
   }
 
-  private sortAlpha(results: any[]): any[] {
+  private collectDataFromPages(pages: number) {
+    for (let i = 1; i < pages; i++) {
+      this.observables.push(this.http
+        .get(`${this.characterApiUrl}${i}`));
+    }
+  }
+
+  private sortByCharName(results: any[]): any[] {
     return results.sort((a: any, b: any) => {
       if (a.name < b.name) { return -1; };
       if (a.name > b.name) { return 1; };
