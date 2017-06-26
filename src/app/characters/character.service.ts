@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/combineLatest';
 import 'rxjs/add/operator/switchMap';
 
-import { Character, ConfigService } from 'app/core';
+import { Character } from 'app/core';
 
 @Injectable()
 export class CharacterService {
@@ -20,9 +19,7 @@ export class CharacterService {
     return this.http
       .get(`${this.characterApiUrl}1`)
       .map(results => results.json())
-      .switchMap((json) => {
-        return this.formatDataFromPages(json);
-      });
+      .switchMap((json) => { return this.formatDataFromPages(json); });
   }
 
   private formatDataFromPages(json: any): Observable<Character[]> {
