@@ -9,41 +9,53 @@ import { Character, ConfigService } from 'app/core';
 
 @Injectable()
 export class CharacterService {
+  private apiURL = `http://swapi.co/api/people/?page=`;
+  private observables: any[];
 
-  constructor(private http: Http, private configService: ConfigService) { }
+  constructor(
+    private http: Http,
+    private configService: ConfigService,
+  ) {
+    this.observables = [];
+  }
 
   public fetchCharacters(source: string): Observable<any[]> {
-    const apiURL = `${this.configService.apiBase}${source}${this.configService.apiPage}`;
-
     return this.http
-      .get(`${apiURL}1`)
+      .get(`${this.apiURL}1`)
       .map(results => results.json())
-      .switchMap((json) => {
-        const pages = json.count % 10 === 0
-          ? json.count / 10
-          : (json.count / 10) + 1;
+      .switchMap((json) => { // cut here
+        const pages = this.getPagesCount(json);
 
-        const observables = [];
 
-        for (let i = 1; i < pages; i++) {
-          observables.push(this.http
-            .get(`${apiURL}${i}`));
-        }
+        this.getPagesData(pages);
+
 
         return Observable
-          .forkJoin(observables)
+          .forkJoin(this.observables)
           .map(results => results.map((result: Response) => result.json().results))
           .map(results => [].concat(...results))
-          .map(sortAlpha)
-          .do(array => console.log(array.length));
+          .map(this.sortAlpha);
       });
   }
-}
 
-function sortAlpha(results: any[]): any[] {
-  return results.sort((a: any, b: any) => {
-    if (a.name < b.name) { return -1; };
-    if (a.name > b.name) { return 1; };
-    return 0;
-  });
+  private getPagesData(pages: number) {
+    for (let i = 1; i < pages; i++) {
+      this.observables.push(this.http
+        .get(`${this.apiURL}${i}`));
+    }
+  }
+
+  private getPagesCount(json: any): number {
+    return json.count % 10 === 0
+      ? json.count / 10
+      : (json.count / 10) + 1;
+  }
+
+  private sortAlpha(results: any[]): any[] {
+    return results.sort((a: any, b: any) => {
+      if (a.name < b.name) { return -1; };
+      if (a.name > b.name) { return 1; };
+      return 0;
+    });
+  }
 }
