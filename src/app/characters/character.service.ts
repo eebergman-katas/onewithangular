@@ -13,9 +13,10 @@ export class CharacterService {
   constructor(private http: Http, private configService: ConfigService) { }
 
   public fetchCharacters(source: string): Observable<any[]> {
+    const apiURL = `${this.configService.apiBase}${source}${this.configService.apiPage}`;
 
     return this.http
-      .get(`${this.configService.apiBase}${source}${this.configService.apiPage}1`)
+      .get(`${apiURL}1`)
       .map(results => results.json())
       .switchMap((json) => {
         const pages = json.count % 10 === 0
@@ -26,19 +27,23 @@ export class CharacterService {
 
         for (let i = 1; i < pages; i++) {
           observables.push(this.http
-            .get(`${this.configService.apiBase}${source}${this.configService.apiPage}${i}`));
+            .get(`${apiURL}${i}`));
         }
 
         return Observable
           .forkJoin(observables)
           .map(results => results.map((result: Response) => result.json().results))
           .map(results => [].concat(...results))
-          .map(results => results.sort((a: any, b: any) => {
-            if (a.name < b.name) { return -1; };
-            if (a.name > b.name) { return 1; };
-            return 0;
-          }))
+          .map(sortAlpha)
           .do(array => console.log(array.length));
       });
   }
+}
+
+function sortAlpha(results: any[]): any[] {
+  return results.sort((a: any, b: any) => {
+    if (a.name < b.name) { return -1; };
+    if (a.name > b.name) { return 1; };
+    return 0;
+  });
 }
