@@ -1,11 +1,11 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-grey, 500, 300, 900); // #9E9E9E, #E0E0E0, 
-$my-app-accent:  mat-palette($mat-amber); // #FFC100
-$my-app-warn:    mat-palette($mat-grey, 900); // #212121
+$primary: mat-palette($mat-grey, 500, 300, 900); // #9E9E9E, #E0E0E0, 
+$accent:  mat-palette($mat-amber); // #FFC100
+$warn:    mat-palette($mat-grey, 900); // #212121
 
-$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+$my-app-theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($my-app-theme);
 
@@ -32,12 +32,30 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 }
 
 @mixin primary-background-contrast-color {
-    $primary-color: map-get($my-app-accent, 500);
-  $font-color: map-get($my-app-primary, 900);
+    $primary-color: map-get($accent, 500);
+  $font-color: map-get($primary, 900);
   background-color: $primary-color;
   color: $font-color !important;
 }
 
 .router-link-active {
     @include primary-background-contrast-color;
+}
+
+@mixin hover-style {
+  $background-color: map-get($accent, 400);
+  $font-color: map-get(map-get($accent, contrast), 900);
+  background: $background-color !important;
+  color: $font-color !important;
+}
+
+@mixin selected-hover-style {
+$background-color: map-get($accent, 600);
+  $font-color: map-get(map-get($accent, contrast), 600);
+  background: $background-color !important;
+  color: $font-color !important;
+}
+
+md-list md-list-item:hover {
+  @include hover-style;
 }

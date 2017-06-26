@@ -8,7 +8,7 @@ import * as testing from '../../../testing/index';
 import { ConfigService } from 'app/core';
 import { CharacterService } from 'app/characters/character.service';
 
-fdescribe('CharactersListComponent', () => {
+describe('CharactersListComponent', () => {
   let component: CharactersListComponent;
   let fixture: ComponentFixture<CharactersListComponent>;
   let debugElement: DebugElement;
@@ -54,8 +54,23 @@ fdescribe('CharactersListComponent', () => {
       expect(htmlElement.textContent).toEqual('Characters');
     });
 
-    it('should have populate chars[]', () => {3
+    it('should have populate chars[]', () => {
       expect(component.chars.length).toEqual(testing.characters.length);
+    });
+
+    it('should set selected character when clicked', () => {
+      const testingCharacter = testing.characters[0];
+      debugElement = fixture.debugElement.query(By.css('md-list-item'));
+      htmlElement = debugElement.nativeElement;
+      htmlElement.click();
+      expect(component.selectedCharacter).toBe(testingCharacter);
+    });
+
+    it('should not set character when not clicked', () => {
+      const testingCharacter = testing.characters[0];
+      debugElement = fixture.debugElement.query(By.css('md-list-item'));
+      htmlElement = debugElement.nativeElement;
+      expect(component.selectedCharacter).not.toBe(testingCharacter);
     });
   });
 });

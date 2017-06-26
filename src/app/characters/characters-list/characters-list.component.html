@@ -7,9 +7,9 @@
             <md-progress-spinner class="shift" color="accent" mode="indeterminate">
             </md-progress-spinner>
         </div>
-        <md-list *ngFor="let char of chars">
+        <md-list *ngFor="let char of chars" [class.selected]="selectedCharacter === char" (click)="selectCharacter(char)">
             <md-list-item>
-                {{ char.name }}
+                <span>{{ char.name }}</span>
             </md-list-item>
         </md-list>
     </md-sidenav>

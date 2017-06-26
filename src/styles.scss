@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
-@import '~https://fonts.googleapis.com/icon?family=Raleway';
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/icon?family=Raleway);
 
 .text-primary {
     color: #9E9E9E!important;
@@ -43,7 +43,7 @@
 }
 
 .side-nav-container {
-    height: 45em;
+    height: 47em;
     width: 100%;
 }
 
@@ -63,6 +63,8 @@ p {
 }
 
 md-list {
+    border-right: 1px solid gray;
+    cursor: pointer;
     overflow: scroll;
 }
 
