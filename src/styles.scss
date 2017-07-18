@@ -72,6 +72,18 @@ md-card, md-menu {
     color: #FFC100!important;
 }
 
+table {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
 * {
     font-family: 'Raleway'!important;
     font-weight: 900!important;

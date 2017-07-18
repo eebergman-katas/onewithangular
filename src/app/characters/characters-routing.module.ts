@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', component: CharactersComponent, children: [
 
             { path: '', component: CharactersListComponent, children: [
-                    { path: '', component: CharactersDetailComponent }
+                    // { path: '', component: CharactersDetailComponent }
                 ]
             }
         ]

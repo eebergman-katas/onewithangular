@@ -1,3 +1,28 @@
-<p>
-  characters-detail works!
-</p>
+<div class="shift" *ngIf="char.name !== ' '">
+  <h2>{{ char.name }}</h2>
+
+  <table>
+    <tr>
+      <th>Homeworld</th>
+      <td>{{ char.homeworld }}</td>
+    </tr>
+    <tr>
+      <th>Birth Year</th>
+      <td>{{ char.birth_year }}</td>
+    </tr>
+    <tr>
+      <th>Species</th>
+      <td>{{ char.species }}</td>
+    </tr>
+    <tr>
+      <th>HomeWorld</th>
+      <td>{{ char.homeworld }}</td>
+    </tr>
+    <tr *ngFor="let film of char.films; index">
+      <th>Films</th>
+      <td>{{ film }}</td>
+    </tr>
+  </table>
+
+  
+</div>

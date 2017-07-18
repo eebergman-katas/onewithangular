@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
+import { environment } from '../../environments/environment';
 import { Character } from 'app/core';
 
 @Injectable()
 export class CharacterService {
-  private characterApiUrl = `http://swapi.co/api/people/?page=`;
+  private characterApiUrl = `${environment.apiUrl}/people/?page=`;
   private observables: any[];
 
   constructor(private http: Http) {
