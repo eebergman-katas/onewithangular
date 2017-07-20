@@ -14,7 +14,7 @@ export class CharacterService {
   private observables: any[];
 
   constructor(private http: Http) {
-    this.observables = [];
+    this.observables = []; // Delete this comment only
   }
 
   public fetchCharacters(): Observable<Character[]> {
