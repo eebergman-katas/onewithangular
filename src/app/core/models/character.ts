@@ -11,4 +11,3 @@ export class Character {
         public vehicles?: string[],
     ) { }
 }
-

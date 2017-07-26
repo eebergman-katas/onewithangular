@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Character } from '../../core';
-import { CharacterService } from '../character.service';
+import { CharacterService } from '../../core/services/character.service';
 
 @Component({
   selector: 'app-characters-list',
@@ -11,12 +12,10 @@ export class CharactersListComponent implements OnInit {
   public title = 'Characters';
   public chars: Character[];
   public selectedCharacter: Character;
-  private someArray: string[];
 
   constructor(private charService: CharacterService) {
     this.chars = [];
     this.selectedCharacter = new Character(' ');
-    this.someArray = ['Hello', ' ', ' World'];
   }
 
   ngOnInit() {

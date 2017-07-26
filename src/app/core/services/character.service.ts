@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/forkJoin';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Character } from 'app/core';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class CharacterService {
   private observables: any[];
 
   constructor(private http: Http) {
-    this.observables = []; // Delete this comment only
+    this.observables = [];
   }
 
   public fetchCharacters(): Observable<Character[]> {

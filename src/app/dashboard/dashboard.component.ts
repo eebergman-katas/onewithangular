@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FilmService} from '../core/services/film.service';
+import { Film } from 'app/core/models/film';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   public films: string[];
+  public filmsData: Film[];
 
-  constructor() {
+  constructor(private filmService: FilmService) {
+    this.filmsData = [];
     this.films = [
       'A New Hope',
       'The Empire Strikes Back',
@@ -21,6 +26,15 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getFilms();
+
+    setTimeout(() => {
+      console.log(this.filmsData);
+    }, 1000);
   }
 
+  private getFilms(): void {
+    this.filmService.fetchFilms()
+      .subscribe(film => this.filmsData.push(...film));
+  }
 }

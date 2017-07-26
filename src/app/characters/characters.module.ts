@@ -8,7 +8,7 @@ import { CharactersRoutingModule } from './characters-routing.module';
 import { CharactersComponent } from './characters.component';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { CharactersDetailComponent } from './characters-detail/characters-detail.component';
-import { CharacterService } from 'app/characters/character.service';
+import {CharacterService} from '../core/services/character.service';
 
 @NgModule({
   imports: [

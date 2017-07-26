@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from 'app/core/core.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FilmService } from 'app/core/services/film.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     CoreModule
   ],
-  providers: [],
+  providers: [FilmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
