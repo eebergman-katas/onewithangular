@@ -32,7 +32,7 @@ export class FilmService {
       .forkJoin(this.observables)
       .map(results => results.map((result: Response) => result.json().results))
       .map(results => [].concat(...results))
-      .map(this.sortByCharName);
+      .map(this.sortByMovieID);
   }
 
   private getPagesCount(json: any): number {
@@ -49,10 +49,10 @@ export class FilmService {
   }
 
   // sort by film id
-  private sortByCharName(results: any[]): any[] {
+  private sortByMovieID(results: any[]): any[] {
     return results.sort((a: any, b: any) => {
-      if (a.name < b.name) { return -1; };
-      if (a.name > b.name) { return 1; };
+      if (a.episode_id < b.episode_id) { return -1; };
+      if (a.episode_id > b.episode_id) { return 1; };
       return 0;
     });
   }
