@@ -1,27 +1,27 @@
 <md-toolbar color="warn">
-    <a routerLink="/dashboard" md-button>
-        <h1 class="text-accent">Star Wars</h1>
-    </a>
+  <a routerLink="/dashboard" md-button>
+    <h1 class="text-accent">Star Wars</h1>
+  </a>
 
-    <div class="title-container">
-        <div class="title-button-row">
-            <a routerLink="/dashboard" routerLinkActive="router-link-active" md-button>
+  <div class="title-container">
+    <div class="title-button-row">
+      <a routerLink="/dashboard" routerLinkActive="router-link-active" md-button>
                 <span>Films</span></a>
-            <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
+      <a routerLink="/characters" routerLinkActive="router-link-active" md-button>
                 <span>Characters</span></a>
-            <a routerLink="/planets" routerLinkActive="router-link-active" md-button>
+      <a routerLink="/planets" routerLinkActive="router-link-active" md-button>
                 <span>Planets</span></a>
 
-            <md-menu #menu="mdMenu">
-                <a routerLink="/vehicles" routerLinkActive #rla="routerLinkActive" md-menu-item>
+      <md-menu style="display: none" #menu="mdMenu">
+        <a routerLink="/vehicles" routerLinkActive #rla="routerLinkActive" md-menu-item>
                     <button md-menu-item>Vehicles</button></a>
-                <a routerLink="/vehicles/starships" md-menu-item>
+        <a routerLink="/vehicles/starships" md-menu-item>
                 <button md-menu-item>Starships</button></a>
-            </md-menu>
+      </md-menu>
 
-            <a md-button [mdMenuTriggerFor]="menu" [ngClass]="rla.isActive ? 'router-link-active' : ''">
+      <a md-button [mdMenuTriggerFor]="menu" [ngClass]="rla.isActive ? 'router-link-active' : ''">
                <span>Vehicles</span>
             </a>
-        </div>
     </div>
+  </div>
 </md-toolbar>

@@ -9,20 +9,10 @@ import { Film } from 'app/core/models/film';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public films: string[];
   public filmsData: Film[];
 
   constructor(private filmService: FilmService) {
     this.filmsData = [];
-    this.films = [
-      'A New Hope',
-      'The Empire Strikes Back',
-      'Return of the Jedi',
-      'Phantom Menace',
-      'Attack of the Clones',
-      'Revenge of the Sith',
-      'The Force Awakens'
-    ];
   }
 
   ngOnInit() {

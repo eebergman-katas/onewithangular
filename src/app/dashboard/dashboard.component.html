@@ -1,6 +1,8 @@
 <md-tab-group>
-    <md-tab *ngFor="let film of filmsData" [label]=film.title>
-      <h1 class="opening">{{film.opening_crawl}}</h1>
-    </md-tab>
-</md-tab-group>
+  <md-tab *ngFor="let film of filmsData" [label]=film.title>
+    <div class="opening text-accent">
+      <h1>{{film.opening_crawl}}</h1>
+    </div>
 
+  </md-tab>
+</md-tab-group>

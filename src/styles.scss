@@ -63,9 +63,12 @@ p {
 }
 
 .opening {
-  padding-left: 10em;
-  padding-right: 10em;
-  font-size: 20 !important;
+  margin-top: 0em;
+  padding-left: 15em;
+  padding-right: 15em;
+  background-color: black;
+  min-height: 13em;
+  text-align: center!important;
 }
 
 md-list {
