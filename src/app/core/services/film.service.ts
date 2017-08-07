@@ -32,7 +32,8 @@ export class FilmService {
       .forkJoin(this.observables)
       .map(results => results.map((result: Response) => result.json().results))
       .map(results => [].concat(...results))
-      .map(this.sortByMovieID);
+      .map(this.sortByMovieID)
+      // .map(this.formatOpeningCrawl);
   }
 
   private getPagesCount(json: any): number {
@@ -48,12 +49,25 @@ export class FilmService {
     }
   }
 
-  // sort by film id
   private sortByMovieID(results: any[]): any[] {
     return results.sort((a: any, b: any) => {
       if (a.episode_id < b.episode_id) { return -1; };
       if (a.episode_id > b.episode_id) { return 1; };
       return 0;
+    });
+  }
+
+  // private formatOpeningCrawl(results: any[]): any[] {
+  //   return results.map((films: any) => {
+  //     return films.map((film) => {
+  //       film.opening_crawl.replace('↵', '\n');
+  //     });
+  //   });
+  // }
+
+  private formatOpeningCrawl2(results: any[]): any[] {
+    return results.map((film: any[]) => {
+      // film.opening_crawl.replace('↵', '\n');
     });
   }
 }
