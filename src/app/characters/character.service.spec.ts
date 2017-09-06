@@ -3,7 +3,7 @@ import { XHRBackend, HttpModule } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 
 import { ConfigService } from 'app/core';
-import { CharacterService } from 'app/characters/character.service';
+import { CharacterService } from '../core/services/character.service';
 
 describe('DataService', () => {
   beforeEach(() => {
